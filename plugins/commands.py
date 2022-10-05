@@ -61,6 +61,11 @@ async def start_message(bot, message):
  #   if m.from_user.id not in ADMINS:
      #   await m.delete()
   #  msg = await m.reply("😂idk")
+  
+@illuzX.on_message(Worker.private & Worker.command(["request"]))
+async def req(bot, message):
+    await message.reply_text(
+        text="✒️ Eɴᴛᴇʀ Tʜᴇ Mᴏᴠɪᴇ Nᴀᴍᴇ\n⚠️ Uꜱᴇ Cᴏʀʀᴇᴄᴛ Gᴏᴏgle Sᴘᴇʟʟɪɴɢ ⚠️")
     
 @illuzX.on_message(Worker.private & Worker.command(["help"]))
 async def help(bot, message):
