@@ -13,19 +13,6 @@ from pyrogram.types import (
 #import Db Uri **To Know How Many Users (db)
 from plugins.database.users_chats_db import db
 from plugins.new_module.run_cb import humanbytes
-
-@illuzX.on_message(Worker.command("request")
-async def req(b, m):
-    if m.from_user.id not in ADMINS:
-        await m.delete()
-    msg = await m.reply("✒️ Eɴᴛᴇʀ Tʜᴇ Mᴏᴠɪᴇ Nᴀᴍᴇ\n⚠️ Uꜱᴇ Cᴏʀʀᴇᴄᴛ Gᴏᴏgle Sᴘᴇʟʟɪɴɢ ⚠️")
-    
-@illuzX.on_message(Worker.command('search'))
-async def srch(bot, m):
-    if m.from_user.id not in ADMINS:
-        await m.delete()
-    msg = await m.reply("😂idk")
-    
 @illuzx.on_message(filters.command("status") & filters.user(config.ADMINS) & ~filters.edited)
 async def status_handler(_, m: Message):
     total, used, free = shutil.disk_usage(".")
