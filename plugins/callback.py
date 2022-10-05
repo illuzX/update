@@ -269,7 +269,7 @@ async def cb_handler(client: illuzX, query):
 
 # CallBack Request Button Quary
         elif query.data == "srch":
-          await query.reply_text(text="✒️ Eɴᴛᴇʀ Tʜᴇ Mᴏᴠɪᴇ Nᴀᴍᴇ\nUꜱᴇ Cᴏʀʀᴇᴄᴛ Gᴏᴏgle Sᴘᴇʟʟɪɴɢ ⚠️")
+            await query.reply_text(text="✒️ Eɴᴛᴇʀ Tʜᴇ Mᴏᴠɪᴇ Nᴀᴍᴇ\nUꜱᴇ Cᴏʀʀᴇᴄᴛ Gᴏᴏgle Sᴘᴇʟʟɪɴɢ ⚠️")
 
         elif query.data == "about":
             buttons = [[
