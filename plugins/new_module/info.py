@@ -4,6 +4,8 @@ import shutil
 import psutil
 import config
 #import client 
+from plugins.database.autofilter_db import Media
+from config import ADMINS
 from pyrogram import Client as illuzx, filters 
 from pyrogram.types import (
     Message
@@ -15,6 +17,7 @@ from plugins.new_module.run_cb import humanbytes
 async def status_handler(_, m: Message):
     total, used, free = shutil.disk_usage(".")
     total = humanbytes(total)
+    files = Media.count_documents()
     used = humanbytes(used)
     free = humanbytes(free)
     cpu_usage = psutil.cpu_percent()
@@ -23,6 +26,7 @@ async def status_handler(_, m: Message):
     total_users = await db.total_users_count ()
     await m.reply_text(
         text=f"**Total Disk Space:** {total} \n"
+             f"**Total Files:** {files} \n"
              f"**Used Space:** {used}({disk_usage}%) \n"
              f"**Free Space:** {free} \n"
              f"**Cpu Usage:** {cpu_usage}% \n"
