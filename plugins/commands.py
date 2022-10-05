@@ -15,19 +15,21 @@ async def start_message(bot, message):
     if len(message.command) != 2:
         if message.from_user.id not in ADMINS: 
             buttons = [[
-             InlineKeyboardButton("🔍 𝐬𝐞𝐚𝐫𝐜𝐡 🔎", switch_inline_query_current_chat='')
-            ] ,[
-             InlineKeyboardButton("🔰𝐔𝐩𝐝𝐚𝐭𝐞 𝐂𝐡𝐚𝐧𝐧𝐞𝐥🔰", url="https://t.me/MalayalamOTTUpdatesMvb")
-            ] ,[
-             InlineKeyboardButton("🔸𝐌𝐨𝐯𝐢𝐞𝐬 𝐔𝐩𝐝𝐚𝐭𝐞 𝐂𝐡𝐚𝐧𝐧𝐞𝐥🔸", url="https://t.me/mvbzzer")
+                 InlineKeyboardButton("**RᴇQᴜᴇsᴛ Mᴏᴠɪᴇ**🎬" , callback_data="srch"),
+                 InlineKeyboardButton("**Sᴇᴀʀᴄʜ Mᴏᴠɪᴇ**🔎", switch_inline_query_current_chat='')
+                ], [
+                 InlineKeyboardButton("⚙️ BᴏT Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ ⚙️", url="https://t.me/mvbzzer")
+                ], [
+                 InlineKeyboardButton("**Hᴏᴡ Tᴏ Usᴇ Mᴇ ❓ **" ,  url="https://t.me/+2QLvbzUUdB8yNjM1")
              ]]
         else:
             buttons = [[
-             InlineKeyboardButton("🔍 𝐬𝐞𝐚𝐫𝐜𝐡 🔎", switch_inline_query_current_chat='')
-          ] ,[
-             InlineKeyboardButton("🔰𝐔𝐩𝐝𝐚𝐭𝐞 𝐂𝐡𝐚𝐧𝐧𝐞𝐥🔰", url="https://t.me/MalayalamOTTUpdatesMvb")
-          ] ,[
-             InlineKeyboardButton("🔸𝐌𝐨𝐯𝐢𝐞𝐬 𝐔𝐩𝐝𝐚𝐭𝐞 𝐂𝐡𝐚𝐧𝐧𝐞𝐥🔸", url="https://t.me/mvbzzer")
+                 InlineKeyboardButton("**RᴇQᴜᴇsᴛ Mᴏᴠɪᴇ**🎬" , callback_data="srch"),
+                 InlineKeyboardButton("**Sᴇᴀʀᴄʜ Mᴏᴠɪᴇ**🔎", switch_inline_query_current_chat='')
+                ], [
+                 InlineKeyboardButton("⚙️ BᴏT Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ ⚙️", url="https://t.me/mvbzzer")
+                ], [
+                 InlineKeyboardButton("**Hᴏᴡ Tᴏ Usᴇ Mᴇ ❓ **" ,  url="https://t.me/+2QLvbzUUdB8yNjM1")
              ]]    
         await message.reply_photo(photo = choice(BOT_PICS), caption=AtwFilt.START_TXT.format(mention = message.from_user.mention, bot_name = bot_info.BOT_NAME, bot_username = bot_info.BOT_USERNAME), reply_markup=InlineKeyboardMarkup(buttons))
         
