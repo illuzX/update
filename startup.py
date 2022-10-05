@@ -20,12 +20,12 @@ Iam [{bot_name}](t.me/{bot_username}) 𝙾𝚛 𝚢𝚘𝚞 𝚌𝚊𝚗 𝚌�
  <p><b>Repo</b></p>
 [𝐒𝐨𝐮𝐫𝐜𝐞 𝐂𝐨𝐝𝐞](https://www.github.com/illuzX/AtwFilt)
 **𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐫**
-[𝐈𝐥𝐥𝐮𝐳𝐗](t.me/Grayhathacker767)"""
+[𝐈𝐥𝐥𝐮𝐳𝐗](t.me/illuzX3)"""
 
     ABOUT_MSG = """
 𝐀𝐁𝐎𝐔𝐓 𝐌𝐄
 
-○ 𝐂𝐫𝐞𝐚𝐭𝐨𝐫 : [𝐈𝐥𝐥𝐮𝐳𝕏](t.me/illuzX)
+○ 𝐂𝐫𝐞𝐚𝐭𝐨𝐫 : [𝐈𝐥𝐥𝐮𝐳𝕏](t.me/illuzX3)
 ○ 𝐋𝐚𝐧𝐠𝐮𝐚𝐠𝐞 : [𝐏𝐲𝐭𝐡𝐨𝐧 𝟑.𝟗.𝟏0](https://www.python.org/)
 ○ 𝐋𝐢𝐛𝐫𝐚𝐫𝐲 : [𝐏𝐲𝐫𝐨𝐠𝐫𝐚𝐦 𝐀𝐬𝐲𝐧𝐜𝐢𝐨 𝟏.𝟒.𝟏7](https://docs.pyrogram.org/)
 ○ 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 : [𝐔𝐳𝕏_𝐁𝐨𝐭𝐬](https://t.me/UZX_BOTS)
