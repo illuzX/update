@@ -50,11 +50,11 @@ async def start_message(bot, message):
 
 
 
-@illuzX.on_message(Worker.command("request")
-async def req(bot, message):
-    if m.from_user.id not in ADMINS:
-        await m.delete()
-    msg = await m.reply("✒️ Eɴᴛᴇʀ Tʜᴇ Mᴏᴠɪᴇ Nᴀᴍᴇ\n⚠️ Uꜱᴇ Cᴏʀʀᴇᴄᴛ Gᴏᴏgle Sᴘᴇʟʟɪɴɢ ⚠️")
+#@illuzX.on_message(Worker.command("request")
+#async def req(bot, message):
+#    if m.from_user.id not in ADMINS:
+#        await m.delete()
+#   msg = await m.reply("✒️ Eɴᴛᴇʀ Tʜᴇ Mᴏᴠɪᴇ Nᴀᴍᴇ\n⚠️ Uꜱᴇ Cᴏʀʀᴇᴄᴛ Gᴏᴏgle Sᴘᴇʟʟɪɴɢ ⚠️")
     
 #@illuzX.on_message(Worker.command('search'))
 #async def srch(bot, m):
