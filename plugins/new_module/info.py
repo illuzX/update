@@ -17,13 +17,13 @@ from plugins.new_module.run_cb import humanbytes
 async def status_handler(_, m: Message):
     total, used, free = shutil.disk_usage(".")
     total = humanbytes(total)
-    files = Media.count_documents()
     used = humanbytes(used)
     free = humanbytes(free)
     cpu_usage = psutil.cpu_percent()
     ram_usage = psutil.virtual_memory ().percent
     disk_usage = psutil.disk_usage('/').percent
     total_users = await db.total_users_count ()
+    files = await Media.count_documents()
     await m.reply_text(
         text=f"**Total Disk Space:** {total} \n"
              f"**Total Files:** {files} \n"
