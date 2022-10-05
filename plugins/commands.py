@@ -15,7 +15,7 @@ async def start_message(bot, message):
     if len(message.command) != 2:
         if message.from_user.id not in ADMINS: 
             buttons = [[
-                 InlineKeyboardButton("RᴇQᴜᴇsᴛ Mᴏᴠɪᴇ🎬" , callback_data="srch"),
+                 InlineKeyboardButton("RᴇQᴜᴇsᴛ Mᴏᴠɪᴇ🎬" , callback_data="request"),
                  InlineKeyboardButton("Sᴇᴀʀᴄʜ Mᴏᴠɪᴇ🔎", switch_inline_query_current_chat='')
                 ], [
                  InlineKeyboardButton("⚙️ BᴏT Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ ⚙️", url="https://t.me/mvbzzer")
@@ -24,7 +24,7 @@ async def start_message(bot, message):
              ]]
         else:
             buttons = [[
-                 InlineKeyboardButton("RᴇQᴜᴇsᴛ Mᴏᴠɪᴇ🎬" , callback_data="srch"),
+                 InlineKeyboardButton("RᴇQᴜᴇsᴛ Mᴏᴠɪᴇ🎬" , callback_data="request"),
                  InlineKeyboardButton("Sᴇᴀʀᴄʜ Mᴏᴠɪᴇ🔎", switch_inline_query_current_chat='')
                 ], [
                  InlineKeyboardButton("⚙️ BᴏT Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ ⚙️", url="https://t.me/mvbzzer")
@@ -46,7 +46,22 @@ async def start_message(bot, message):
             reply_markup=reply_markup
         )
         return
-   
+
+
+
+
+@illuzX.on_message(Worker.command("request")
+async def req(b, m):
+    if m.from_user.id not in ADMINS:
+        await m.delete()
+    msg = await m.reply("✒️ Eɴᴛᴇʀ Tʜᴇ Mᴏᴠɪᴇ Nᴀᴍᴇ\n⚠️ Uꜱᴇ Cᴏʀʀᴇᴄᴛ Gᴏᴏgle Sᴘᴇʟʟɪɴɢ ⚠️")
+    
+@illuzX.on_message(Worker.command('search'))
+async def srch(bot, m):
+    if m.from_user.id not in ADMINS:
+        await m.delete()
+    msg = await m.reply("😂idk")
+    
 @illuzX.on_message(Worker.private & Worker.command(["help"]))
 async def help(bot, message):
     button = [[
