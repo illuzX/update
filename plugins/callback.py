@@ -242,23 +242,23 @@ async def cb_handler(client: illuzX, query):
         elif query.data == "start":
             if query.from_user.id not in ADMINS: 
                 buttons = [[
-                 InlineKeyboardButton("**RᴇQᴜᴇsᴛ Mᴏᴠɪᴇ**🎬" , callback_data="srch"),
-                 InlineKeyboardButton("**Sᴇᴀʀᴄʜ Mᴏᴠɪᴇ**🔎", switch_inline_query_current_chat='')
+                 InlineKeyboardButton("RᴇQᴜᴇsᴛ Mᴏᴠɪᴇ🎬" , callback_data="srch"),
+                 InlineKeyboardButton("Sᴇᴀʀᴄʜ Mᴏᴠɪᴇ🔎", switch_inline_query_current_chat='')
                 ], [
                  InlineKeyboardButton("⚙️ BᴏT Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ ⚙️", url="https://t.me/mvbzzer")
                 ], [
-                 InlineKeyboardButton("**Hᴏᴡ Tᴏ Usᴇ Mᴇ ❓ **" ,  url="https://t.me/+2QLvbzUUdB8yNjM1")
+                 InlineKeyboardButton("Hᴏᴡ Tᴏ Usᴇ Mᴇ ❓ " , url="https://t.me/+2QLvbzUUdB8yNjM1")
                  ]]
             else:
                 buttons = [[
-                 InlineKeyboardButton("**RᴇQᴜᴇsᴛ Mᴏᴠɪᴇ**🎬" , callback_data="srch"),
-                 InlineKeyboardButton("**Sᴇᴀʀᴄʜ Mᴏᴠɪᴇ**🔎", switch_inline_query_current_chat='')
+                 InlineKeyboardButton("RᴇQᴜᴇsᴛ Mᴏᴠɪᴇ🎬" , callback_data="srch"),
+                 InlineKeyboardButton("Sᴇᴀʀᴄʜ Mᴏᴠɪᴇ🔎", switch_inline_query_current_chat='')
                 ], [
                  InlineKeyboardButton("⚙️ BᴏT Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ ⚙️", url="https://t.me/mvbzzer")
                 ], [
-                 InlineKeyboardButton("**Hᴏᴡ Tᴏ Usᴇ Mᴇ ❓ **" ,  url="https://t.me/+2QLvbzUUdB8yNjM1")
+                 InlineKeyboardButton("Hᴏᴡ Tᴏ Usᴇ Mᴇ ❓ ",  url="https://t.me/+2QLvbzUUdB8yNjM1")
                  ]]               
-            await query.message.edit(text=AtwFilt.START_TXT.format(mention=query.from_user.mention, bot_name=bot_info.BOT_NAME, bot_username=bot_info.BOT_USERNAME), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+            await query.message.edit(text=AtwFilt.START_TXT.format(mention=query.from_user.mention, bot_name=bot_info.BOT_NAME, bot_username=bot_info.BOT_USERNAME), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=False)
 
         elif query.data == "help":
             buttons = [[
@@ -269,7 +269,7 @@ async def cb_handler(client: illuzX, query):
 
 # CallBack Request Button Quary
         elif query.data == "srch":
-          await query.message.text(text="✒️ Eɴᴛᴇʀ Tʜᴇ Mᴏᴠɪᴇ Nᴀᴍᴇ\nUꜱᴇ Cᴏʀʀᴇᴄᴛ Gᴏᴏgle Sᴘᴇʟʟɪɴɢ ⚠️")
+            await query.reply_text(text="✒️ Eɴᴛᴇʀ Tʜᴇ Mᴏᴠɪᴇ Nᴀᴍᴇ\nUꜱᴇ Cᴏʀʀᴇᴄᴛ Gᴏᴏgle Sᴘᴇʟʟɪɴɢ ⚠️")
 
         elif query.data == "about":
             buttons = [[
