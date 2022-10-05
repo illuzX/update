@@ -15,13 +15,13 @@ from plugins.database.users_chats_db import db
 from plugins.new_module.run_cb import humanbytes
 
 @illuzX.on_message(Worker.command("request")
-async def total(b, m):
+async def req(b, m):
     if m.from_user.id not in ADMINS:
         await m.delete()
     msg = await m.reply("✒️ Eɴᴛᴇʀ Tʜᴇ Mᴏᴠɪᴇ Nᴀᴍᴇ\n⚠️ Uꜱᴇ Cᴏʀʀᴇᴄᴛ Gᴏᴏgle Sᴘᴇʟʟɪɴɢ ⚠️")
     
 @illuzX.on_message(Worker.command('search'))
-async def total(bot, m):
+async def srch(bot, m):
     if m.from_user.id not in ADMINS:
         await m.delete()
     msg = await m.reply("😂idk")
