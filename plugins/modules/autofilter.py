@@ -172,6 +172,5 @@ async def pm_autofilter(client, message):
             await asyncio.sleep(300)
             await dell.delete()
         else:
-            dell=await message.reply_photo(photo=random.choice(BOT_PICS), caption=AtwFilt.GET_MOVIE_2.format(query=search, mention=message.from_user.mention, chat=bot_info.BOT_NAME), reply_markup=InlineKeyboardMarkup(buttons))
-            await asyncio.sleep(300)
-            await dell.delete()
+            await query.answer("sorry",show_alert=True)
+            
