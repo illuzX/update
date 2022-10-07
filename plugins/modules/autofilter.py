@@ -14,7 +14,7 @@ async def group_filters(client, message):
         files = await get_filter_results(query=search)
         if files:
             for file in files:
-                file_id = file.file_id.id
+                file_id = file.file_id
                 filename = f"{get_size(file.file_size)} {file.file_name}"
                 btn.append(
                     [InlineKeyboardButton(text=f"{filename}", callback_data=f"AtwFiltBot#{file_id}")]
@@ -172,6 +172,5 @@ async def pm_autofilter(client, message):
             await asyncio.sleep(300)
             await dell.delete()
         else:
-            dell=await message.reply_photo(photo=random.choice(BOT_PICS), caption=AtwFilt.GET_MOVIE_2.format(query=search, mention=message.from_user.mention, chat=bot_info.BOT_NAME), reply_markup=InlineKeyboardMarkup(buttons))
-            await asyncio.sleep(300)
-            await dell.delete()
+            await message.answer("sorry",show_alert=True)
+            
