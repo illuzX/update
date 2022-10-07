@@ -172,5 +172,5 @@ async def pm_autofilter(client, message):
             await asyncio.sleep(300)
             await dell.delete()
         else:
-            await query.answer("sorry",show_alert=True)
+            await message.answer("sorry",show_alert=True)
             
