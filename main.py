@@ -10,6 +10,7 @@ from pyrogram import Client, __version__
 from pyrogram.raw.all import layer
 from plugins.database.autofilter_db import Media
 from config import API_ID, API_HASH, B_KEYS, bot_info
+from typing import Union, Optional, AsyncGenerator
 import pyromod.listen
 
 class IlluzX(Client):
