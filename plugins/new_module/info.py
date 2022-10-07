@@ -6,7 +6,7 @@ import config
 #import client 
 from plugins.database.autofilter_db import Media
 from config import ADMINS
-from pyrogram import Client as illuzx, filters 
+from pyrogram import Client as illuzx, filters ,enums
 from pyrogram.types import (
     Message
 )
@@ -32,6 +32,6 @@ async def status_handler(_, m: Message):
              f"**Cpu Usage:** {cpu_usage}% \n"
              f"**Ram Usage:** {ram_usage}%\n"
              f"**Total Users In db:** {total_users}`",
-        parse_mode="Markdown",
+        enums.ParseMode.MARKDOWN,
         quote=True
     )
