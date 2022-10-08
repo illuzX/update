@@ -1,6 +1,6 @@
 import logging
 from pyrogram import Client, filters as Worker, emoji
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, InlineQueryResultCachedDocument
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, InlineQueryResultCachedDocument, InlineQuery
 from plugins.database._utils import get_size,is_subscribed
 from plugins.database.autofilter_db import get_search_results
 from config import CACHE_TIME, AUTH_USERS, FORCES_SUB, CUSTOM_FILE_CAPTION
