@@ -15,7 +15,7 @@ async def start_message(bot, message):
     if len(message.command) != 2:
         if message.from_user.id not in ADMINS: 
             buttons = [[
-                 InlineKeyboardButton("RᴇQᴜᴇsᴛ Mᴏᴠɪᴇ🎬" , callback_data="t.me/mvbzzer"),
+                 InlineKeyboardButton("Aʙᴏᴜᴛ 🦜" , callback_data= "about"),
                  InlineKeyboardButton("Sᴇᴀʀᴄʜ Mᴏᴠɪᴇ🔎", switch_inline_query_current_chat='')
                 ], [
                  InlineKeyboardButton("⚙️ BᴏT Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ ⚙️", url="https://t.me/mvbzzer")
@@ -24,7 +24,7 @@ async def start_message(bot, message):
              ]]
         else:
             buttons = [[
-                 InlineKeyboardButton("RᴇQᴜᴇsᴛ Mᴏᴠɪᴇ🎬" , callback_data="t.me/mvbzzer"),
+                 InlineKeyboardButton("Aʙᴏᴜᴛ 🦜" , callback_data="about"),
                  InlineKeyboardButton("Sᴇᴀʀᴄʜ Mᴏᴠɪᴇ🔎", switch_inline_query_current_chat='')
                 ], [
                  InlineKeyboardButton("⚙️ BᴏT Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ ⚙️", url="https://t.me/mvbzzer")
