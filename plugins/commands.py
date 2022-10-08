@@ -1,5 +1,5 @@
 from random import choice
-from config import START_MSG, FORCES_SUB, BOT_PICS, ADMINS, bot_info, DEV_NAME
+from config import START_MSG, FORCE_SUB, BOT_PICS, ADMINS, bot_info, DEV_NAME
 from pyrogram import Client as illuzX, filters as Worker
 from pyrogram.types import InlineKeyboardMarkup,  InlineKeyboardButton, CallbackQuery
 from startup import AtwFilt
@@ -35,7 +35,7 @@ async def start_message(bot, message):
         
     elif len(message.command) ==2 and message.command[1] in ["subscribe"]:
         FORCES=["https://telegra.ph/file/10e57b92fde7aa7b540cf.jpg"]
-        invite_link = await bot.create_chat_invite_link(int(FORCES_SUB))
+        invite_link = await bot.create_chat_invite_link(int(FORCE_SUB))
         button=[[
          InlineKeyboardButton("🦋Join To Use Me", url=invite_link.invite_link)
          ]]
