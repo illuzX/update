@@ -8,6 +8,18 @@ logger.setLevel(logging.INFO)
 
 # ~~~~ File Size ~~~~ #
 
+class temp(object):
+    BANNED_USERS = []
+    BANNED_CHATS = []
+    ME = None
+    CURRENT=int(os.environ.get("SKIP", 4))
+    CANCEL = False
+    MELCOW = {}
+    U_NAME = None
+    B_NAME = None
+    G_LINK = None
+    SETTINGS = {}
+    
 def get_size(size):
     """Get size in readable format"""
 
