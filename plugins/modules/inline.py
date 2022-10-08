@@ -9,7 +9,7 @@ cache_time = 0 if AUTH_USERS or FORCES_SUB else CACHE_TIME
 
 
 logger = logging.getLogger(__name__)
-cache_time = 0 if AUTH_USERS or AUTH_CHANNEL else CACHE_TIME
+cache_time = 0 if AUTH_USERS or FORCES_SUB else CACHE_TIME
 
 async def inline_users(query: InlineQuery):
     if AUTH_USERS:
@@ -32,7 +32,7 @@ async def answer(bot, query):
                            switch_pm_parameter="hehe")
         return
 
-    if AUTH_CHANNEL and not await is_subscribed(bot, query):
+    if FORCES_SUB and not await is_subscribed(bot, query):
         await query.answer(results=[],
                            cache_time=0,
                            switch_pm_text='You have to subscribe my channel to use the bot',
