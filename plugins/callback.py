@@ -241,7 +241,7 @@ async def cb_handler(client: illuzX, query):
         elif query.data == "start":
             if query.from_user.id not in ADMINS: 
                 buttons = [[
-                 InlineKeyboardButton("RᴇQᴜᴇsᴛ Mᴏᴠɪᴇ🎬" , callback_data="request"),
+                 InlineKeyboardButton("Aʙᴏᴜᴛ  🦜" , callback_data="about"),
                  InlineKeyboardButton("Sᴇᴀʀᴄʜ Mᴏᴠɪᴇ🔎", switch_inline_query_current_chat='')
                 ], [
                  InlineKeyboardButton("⚙️ BᴏT Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ ⚙️", url="https://t.me/mvbzzer")
@@ -250,7 +250,7 @@ async def cb_handler(client: illuzX, query):
                  ]]
             else:
                 buttons = [[
-                 InlineKeyboardButton("RᴇQᴜᴇsᴛ Mᴏᴠɪᴇ🎬" , callback_data="srch"),
+                 InlineKeyboardButton("Aʙᴏᴜᴛ  🦜" , callback_data="about"),
                  InlineKeyboardButton("Sᴇᴀʀᴄʜ Mᴏᴠɪᴇ🔎", switch_inline_query_current_chat='')
                 ], [
                  InlineKeyboardButton("⚙️ BᴏT Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ ⚙️", url="https://t.me/mvbzzer")
@@ -265,10 +265,6 @@ async def cb_handler(client: illuzX, query):
               InlineKeyboardButton("About 😎", callback_data="about")
               ]]               
             await query.message.edit(text=AtwFilt.HELP_MSG.format(mention=query.from_user.mention), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=False)
-
-# CallBack Request Button Quary
-        #elif query.data == "srch":
-           # await query.reply_text(text="✒️ Eɴᴛᴇʀ Tʜᴇ Mᴏᴠɪᴇ Nᴀᴍᴇ\nUꜱᴇ Cᴏʀʀᴇᴄᴛ Gᴏᴏgle Sᴘᴇʟʟɪɴɢ ⚠️")
 
         elif query.data == "about":
             buttons = [[
