@@ -1,7 +1,7 @@
 # import logging, os, traceback
 import logging, os, traceback
 from pyrogram.errors import UserNotParticipant, FloodWait, InputUserDeactivated, UserIsBlocked, PeerIdInvalid
-from config import FORCES_SUB
+from config import FORCE_SUB
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -41,7 +41,7 @@ def split_list(l, n):
 
 async def is_subscribed(bot, query):
     try:
-        user = await bot.get_chat_member(FORCES_SUB, query.from_user.id)
+        user = await bot.get_chat_member(FORCE_SUB, query.from_user.id)
     except UserNotParticipant:
         pass
     except Exception as e:
