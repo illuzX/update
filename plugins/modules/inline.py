@@ -40,7 +40,7 @@ async def answer(bot, query):
                            switch_pm_parameter="subscribe")
         return
 
-   results = []
+    results = []
     if '|' in query.query:
         string, file_type = query.query.split('|', maxsplit=1)
         string = string.strip()
