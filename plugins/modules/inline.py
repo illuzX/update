@@ -1,16 +1,13 @@
 import logging
-from pyrogram import Client, filters as Worker, emoji
+from pyrogram import Client, emoji, filters
+from pyrogram.errors.exceptions.bad_request_400 import QueryIdInvalid
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, InlineQueryResultCachedDocument, InlineQuery
-from plugins.database._utils import get_size,is_subscribed
 from plugins.database.autofilter_db import get_search_results
-from plugins.database._utils import temp
-from config import CACHE_TIME, AUTH_USERS, FORCES_SUB, CUSTOM_FILE_CAPTION
-logger = logging.getLogger(__name__)
-cache_time = 0 if AUTH_USERS or FORCES_SUB else CACHE_TIME
-
+from plugins.database._utils import get_size, temp, is_subscribed
+from config import CACHE_TIME, AUTH_USERS, FORCE_SUB, CUSTOM_FILE_CAPTION
 
 logger = logging.getLogger(__name__)
-cache_time = 0 if AUTH_USERS or FORCES_SUB else CACHE_TIME
+cache_time = 0 if AUTH_USERS or FORCE_SUB else CACHE_TIME
 
 async def inline_users(query: InlineQuery):
     if AUTH_USERS:
@@ -33,7 +30,7 @@ async def answer(bot, query):
                            switch_pm_parameter="hehe")
         return
 
-    if FORCES_SUB and not await is_subscribed(bot, query):
+    if FORCE_SUB and not await is_subscribed(bot, query):
         await query.answer(results=[],
                            cache_time=0,
                            switch_pm_text='You have to subscribe my channel to use the bot',
@@ -49,12 +46,13 @@ async def answer(bot, query):
         string = query.query.strip()
         file_type = None
 
-    offset = int(query.offset or 0)
+    offset = int(query.offset or 1)
     reply_markup = get_reply_markup(query=string)
-    files, next_offset = await get_search_results(string,
+    files, next_offset, total = await get_search_results(string,
                                                   file_type=file_type,
                                                   max_results=10,
                                                   offset=offset)
+
     for file in files:
         title=file.file_name
         size=get_size(file.file_size)
@@ -103,12 +101,13 @@ async def answer(bot, query):
 
 
 def get_reply_markup(query):
-    buttons = [[
-        InlineKeyboardButton('Support Group', url='t.me/mvbzzer'),
-        InlineKeyboardButton('More Botz', url='t.me/Mvbbotz')
-        ],[
-        InlineKeyboardButton('🔍 Search again 🔎', switch_inline_query_current_chat=query)
-        ]]
+    buttons = [
+        [
+            InlineKeyboardButton('Search again', switch_inline_query_current_chat=query)
+        ]
+        ]
     return InlineKeyboardMarkup(buttons)
+
+
 
 
