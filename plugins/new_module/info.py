@@ -32,6 +32,6 @@ async def status_handler(_, m: Message):
              f"**Cpu Usage:** {cpu_usage}% \n"
              f"**Ram Usage:** {ram_usage}%\n"
              f"**Total Users In db:** {total_users}`",
-        enums.ParseMode.MARKDOWN,
+        enums.ParseMode.MARKDOWN, 
         quote=True
-    )
+  )
