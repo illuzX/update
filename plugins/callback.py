@@ -4,7 +4,7 @@ from pyrogram.errors import UserIsBlocked, PeerIdInvalid
 from plugins.database.autofilter_db import  get_file_details
 from plugins.database._utils import get_size, is_subscribed
 from startup import AtwFilt
-from config import BUTTONS, FORCES_SUB, CUSTOM_FILE_CAPTION, START_MSG, DEV_NAME, bot_info, ADMINS
+from config import BUTTONS, FORCE_SUB, CUSTOM_FILE_CAPTION, START_MSG, DEV_NAME, bot_info, ADMINS
 
 
 @illuzX.on_callback_query()
@@ -188,7 +188,7 @@ async def cb_handler(client: illuzX, query):
             caption=CUSTOM_FILE_CAPTION.format(mention=query.from_user.mention, title=title, size=size, caption=files.caption)
 
             try:
-                if FORCES_SUB and not await is_subscribed(client, query):
+                if FORCE_SUB and not await is_subscribed(client, query):
                     await query.answer(url=f"https://t.me/{bot_info.BOT_USERNAME}?start=subscribe")
                     return
                 else:
@@ -208,7 +208,7 @@ async def cb_handler(client: illuzX, query):
 # ---------- 📁 [ | 𝗣𝗠 𝗙𝗜𝗟𝗘𝗦 | ] 📁 ---------- #
 
         elif query.data.startswith("pmfile"):
-            if FORCES_SUB and not await is_subscribed(client, query):
+            if FORCE_SUB and not await is_subscribed(client, query):
                 await query.answer(url=f"https://t.me/{bot_info.BOT_USERNAME}?start=subscribe")
                 return
             ident, file_id = query.data.split("#")
