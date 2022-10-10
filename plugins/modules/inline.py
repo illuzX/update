@@ -7,7 +7,7 @@ from plugins.database._utils import get_size, temp, is_subscribed
 from config import CACHE_TIME, AUTH_USERS, FORCE_SUB, CUSTOM_FILE_CAPTION
 
 logger = logging.getLogger(__name__)
-cache_time = 0 if AUTH_USERS or FORCE_SUB else CACHE_TIME
+cache_time = 2 if AUTH_USERS or FORCE_SUB else CACHE_TIME
 
 async def inline_users(query: InlineQuery):
     if AUTH_USERS:
@@ -25,14 +25,14 @@ async def answer(bot, query):
     
     if not await inline_users(query):
         await query.answer(results=[],
-                           cache_time=0,
+                           cache_time=2,
                            switch_pm_text='okDa',
                            switch_pm_parameter="hehe")
         return
 
     if FORCE_SUB and not await is_subscribed(bot, query):
         await query.answer(results=[],
-                           cache_time=0,
+                           cache_time=2,
                            switch_pm_text='You have to subscribe my channel to use the bot',
                            switch_pm_parameter="subscribe")
         return
@@ -46,7 +46,7 @@ async def answer(bot, query):
         string = query.query.strip()
         file_type = None
 
-    offset = int(query.offset or 1)
+    offset = int(query.offset or 0)
     reply_markup = get_reply_markup(query=string)
     files, next_offset, total = await get_search_results(string,
                                                   file_type=file_type,
