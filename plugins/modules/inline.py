@@ -25,21 +25,21 @@ async def answer(bot, query):
     
     if not await inline_users(query):
         await query.answer(results=[],
-                           cache_time=2,
+                           cache_time=0,
                            switch_pm_text='okDa',
                            switch_pm_parameter="hehe")
         return
 
     if FORCE_SUB and not await is_subscribed(bot, query):
         await query.answer(results=[],
-                           cache_time=2,
+                           cache_time=0,
                            switch_pm_text='You have to subscribe my channel to use the bot',
                            switch_pm_parameter="subscribe")
         return
 
     results = []
     if '|' in query.query:
-        string, file_type = query.query.split('|', maxsplit=1)
+        string, file_type = query.query.split('|', maxsplit=0)
         string = string.strip()
         file_type = file_type.strip().lower()
     else:
