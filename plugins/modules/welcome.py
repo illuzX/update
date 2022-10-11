@@ -2,7 +2,8 @@ import asyncio
 from pyrogram import Client as illuzX, filters as Worker, emoji
 
 MENTION = "{}"  
-MESSAGE = "{} Welcome to {}!\n Thanks For Joining In This {}🥰" 
+MESSAGE = "{} Welcome to {}!\n Thanks For Joining In This"
+CHAT = "{}"
 
 @illuzX.on_message(Worker.new_chat_members)
 async def welcome(client, message):
