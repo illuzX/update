@@ -72,6 +72,6 @@ Couldn't Find {query}?  Please Click Your Request Movie Name"""
 
 👤 Requested By :<b> {mention} </b>
 
-Uploder : <b>{chatb</b>
+Uploder : <b>{chat}</b>
 """
 
