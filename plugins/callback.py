@@ -47,7 +47,7 @@ async def cb_handler(client: illuzX, query):
                 buttons = data['buttons'][int(index)+1].copy()
 
                 buttons.append(
-                    [InlineKeyboardButton(" Back Page", callback_data=f"backgroup_{int(index)+1}_{keyword}"),InlineKeyboardButton("Next Page ➡", callback_data=f"nextgroup_{int(index)+1}_{keyword}")
+                    [InlineKeyboardButton(" Back Page", callback_data=f"backgroup_{int(index)+1}_{keyword}"),InlineKeyboardButton("More Size ➡", callback_data=f"nextgroup_{int(index)+1}_{keyword}")
                     ]
                 )
                 buttons.append(
@@ -71,7 +71,7 @@ async def cb_handler(client: illuzX, query):
                 buttons = data['buttons'][int(index)-1].copy()
 
                 buttons.append(
-                    [InlineKeyboardButton("Next Page ➡", callback_data=f"nextgroup_{int(index)-1}_{keyword}")
+                    [InlineKeyboardButton("More Size ➡", callback_data=f"nextgroup_{int(index)-1}_{keyword}")
                     ]
                 )
                 buttons.append(
@@ -85,7 +85,7 @@ async def cb_handler(client: illuzX, query):
                 buttons = data['buttons'][int(index)-1].copy()
 
                 buttons.append(
-                    [InlineKeyboardButton(" Back Page", callback_data=f"backgroup_{int(index)-1}_{keyword}"),InlineKeyboardButton("Next Page ➡", callback_data=f"nextgroup_{int(index)-1}_{keyword}")
+                    [InlineKeyboardButton(" Back Page", callback_data=f"backgroup_{int(index)-1}_{keyword}"),InlineKeyboardButton("More Size ➡", callback_data=f"nextgroup_{int(index)-1}_{keyword}")
                     ]
                 )
                 buttons.append(
@@ -127,7 +127,7 @@ async def cb_handler(client: illuzX, query):
                 buttons = data['buttons'][int(index)+1].copy()
 
                 buttons.append(
-                    [InlineKeyboardButton(" Back Page", callback_data=f"backbot_{int(index)+1}_{keyword}"),InlineKeyboardButton("Next Page ➡", callback_data=f"nextbot_{int(index)+1}_{keyword}")
+                    [InlineKeyboardButton(" Back Page", callback_data=f"backbot_{int(index)+1}_{keyword}"),InlineKeyboardButton("More Size ➡", callback_data=f"nextbot_{int(index)+1}_{keyword}")
                     ]
                 )
                 buttons.append(
@@ -151,7 +151,7 @@ async def cb_handler(client: illuzX, query):
                 buttons = data['buttons'][int(index)-1].copy()
 
                 buttons.append(
-                    [InlineKeyboardButton("Next Page ➡", callback_data=f"nextbot_{int(index)-1}_{keyword}")
+                    [InlineKeyboardButton("More Size ➡", callback_data=f"nextbot_{int(index)-1}_{keyword}")
                     ]
                 )
                 buttons.append(
@@ -218,20 +218,10 @@ async def cb_handler(client: illuzX, query):
                 size=get_size(files.file_size)
                 
                 caption=CUSTOM_FILE_CAPTION.format(mention=query.from_user.mention, title=title, size=size, caption=files.caption)
-
-                buttons = [[
-                  InlineKeyboardButton('📍Mᴀɪɴ ᴄʜᴀɴɴᴇʟ📌', url='https://t.me/Mvbzzer'),
-                  InlineKeyboardButton("🔎Sᴇᴀʀᴄʜ Aɢᴀɪɴ 📌",switch_inline_query_current_chat='')
-                  ],[
-                  InlineKeyboardButton("🌸Dᴀᴛᴀʙᴀsᴇ🌸", url='https://t.me/Files_For_Bot')
-                  ]]
-                
-                await query.answer()
                 await client.send_cached_media(
                     chat_id=query.from_user.id,
                     file_id=file_id,
                     caption=caption,
-                    reply_markup=InlineKeyboardMarkup(buttons)
                     )
 
 
@@ -296,4 +286,4 @@ async def cb_handler(client: illuzX, query):
             await query.message.delete()
 
     else:
-        await query.answer("Please Request",show_alert=True)
+        await query.answer("its Not For you Request Own!",show_alert=True)
