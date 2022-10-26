@@ -25,7 +25,7 @@ async def status_handler(_, m: Message):
     total_users = await db.total_users_count ()
     files = await Media.count_documents()
     await m.reply_text(
-        text f"**Total Users In db:** {total_users}\n"
+        text f"**Total Users In db:** {total_users}`"
              f"**Total Files:** {files} \n"
              f"**Total Disk Space:** {total} \n"
              f"**Used Space:** {used}({disk_usage}%) \n"
