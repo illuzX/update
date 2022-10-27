@@ -25,13 +25,13 @@ async def status_handler(_, m: Message):
     total_users = await db.total_users_count ()
     files = await Media.count_documents()
     await m.reply_text(
-        text f"**Total Users In db:** {total_users}`"
-             f"**Total Files:** {files} \n"
+        text=f"**Total Files:** {files} \n\n"
              f"**Total Disk Space:** {total} \n"
              f"**Used Space:** {used}({disk_usage}%) \n"
              f"**Free Space:** {free} \n"
              f"**Cpu Usage:** {cpu_usage}% \n"
-             f"**Ram Usage:** {ram_usage}%",
+             f"**Ram Usage:** {ram_usage}%\n"
+             f"**Total Users In db:** {total_users}`",
         parse_mode=enums.ParseMode.MARKDOWN,
         quote=True
         )
